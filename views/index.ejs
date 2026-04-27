@@ -6,12 +6,12 @@
     <% for (let i=0; i < messages.length; i++) { %>
         <h3>User: <%= messages[i].user %>
         </h3>
-        <p>Message: <%= messages[i].text %>
-        </p>
         <p>
             <%= messages[i].added %>
         </p>
+        <button><a href="/messageDetails/<%= i %>">Open message</a></button>
         <% } %>
+    <button><a href="/new">Send a message</a></button>
 </body>
 
 </html>
