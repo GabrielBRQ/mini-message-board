@@ -1,0 +1,178 @@
+/* Reset básico para garantir que fique igual em todos os navegadores */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /* Fontes modernas e limpas */
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f6f8fc; /* Cor de fundo levemente azulada do Gmail */
+  color: #202124;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: #ffffff;
+  border-radius: 16px; /* Bordas arredondadas modernas */
+  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.3), 0 1px 3px 1px rgba(60,64,67,0.15);
+  overflow: hidden;
+}
+
+/* --- CABEÇALHO --- */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+h1 {
+  font-size: 22px;
+  font-weight: 400;
+}
+
+/* Botão "Compor" do Gmail */
+.btn-compose {
+  background-color: #c2e7ff;
+  color: #001d35;
+  padding: 12px 24px;
+  border-radius: 16px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.btn-compose:hover {
+  background-color: #b3d4ec;
+}
+
+/* --- LISTA DE MENSAGENS --- */
+.message-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo de cada linha (que agora é um link) */
+.message-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  border-bottom: 1px solid #f1f3f4;
+  text-decoration: none; /* Remove o sublinhado do link */
+  color: inherit; /* Herda a cor do texto padrão */
+  cursor: pointer;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efeito ao passar o mouse por cima da linha */
+.message-item:hover {
+  background-color: #f2f6fc;
+  box-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60,64,67,0.3);
+  z-index: 1; /* Garante que a sombra fique sobre as outras linhas */
+}
+
+/* Colunas dentro da linha */
+.message-user {
+  width: 250px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.message-snippet {
+  flex-grow: 1;
+  font-size: 14px;
+  color: #5f6368;
+}
+
+.message-date {
+  margin-left: auto;
+  font-size: 12px;
+  color: #5f6368;
+  font-weight: 500;
+  text-align: right;
+  min-width: 100px;
+}
+
+/* --- DETALHES DA MENSAGEM --- */
+.message-content {
+  padding: 30px 24px;
+}
+
+.message-header-info {
+  margin-bottom: 24px;
+}
+
+.message-header-info h3 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #202124;
+}
+
+.message-body {
+  font-size: 14px;
+  color: #202124;
+  line-height: 1.6;
+  white-space: pre-wrap; /* Mantém as quebras de linha originais do texto */
+}
+
+/* --- FORMULÁRIO DE NOVA MENSAGEM --- */
+.form-content {
+  padding: 30px 24px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #5f6368;
+  margin-bottom: 8px;
+}
+
+/* Estilo para os campos de digitação */
+.form-input {
+  font-family: inherit;
+  font-size: 14px;
+  padding: 12px 16px;
+  border: 1px solid #dadce0;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+/* Efeito ao clicar/focar no campo (Azul do Google) */
+.form-input:focus {
+  border-color: #1a73e8; 
+  box-shadow: inset 0 0 0 1px #1a73e8;
+}
+
+.textarea-input {
+  resize: vertical; /* Permite que o usuário aumente a caixa apenas para baixo */
+}
+
+/* Botão de Enviar (Azul forte do Gmail) */
+.btn-submit {
+  background-color: #0b57d0;
+  color: white;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 18px;
+  cursor: pointer;
+  transition: background-color 0.2s, box-shadow 0.2s;
+}
+
+.btn-submit:hover {
+  background-color: #0842a0;
+  box-shadow: 0 1px 3px 0 rgba(60,64,67,0.3);
+}

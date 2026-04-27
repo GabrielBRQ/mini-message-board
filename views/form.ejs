@@ -1,22 +1,35 @@
-<!-- form.ejs -->
 <html>
 
+<head>
+  <title>New Message</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
 <body>
-    <h1>Write your message!</h1>
-    <form method="POST" action="/new">
-        <label for="author">
-            Author name:
-            <input type="text" name="author" id="author">
-        </label>
-        <label for="message">
-            Message:
-            <input type="text" name="messageText" id="'message">
-        </label>
+  <div class="container">
+    <header class="header">
+      <h1>New message</h1>
+      <a href="/" class="btn-compose">Discard</a>
+    </header>
 
-        <button>Send</button>
-    </form>
+    <div class="form-content">
+      <form method="POST" action="/new">
+        
+        <div class="form-group">
+          <label for="author">From:</label>
+          <input type="text" name="author" id="author" class="form-input" placeholder="Seu nome" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message:</label>
+          <textarea name="messageText" id="message" class="form-input textarea-input" placeholder="Escreva sua mensagem..." rows="6" required></textarea>
+        </div>
 
-    <button><a href="/">Home</a></button>
+        <button type="submit" class="btn-submit">Send</button>
+        
+      </form>
+    </div>
+  </div>
 </body>
 
 </html>

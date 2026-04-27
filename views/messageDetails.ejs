@@ -1,11 +1,27 @@
-<!-- messageDetails.ejs -->
 <html>
 
+<head>
+  <title>Message from <%= user %></title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
 <body>
-    <h1>Message Detail</h1>
-    <h3>From: <%= user %></h3>
-    <p>Message: <%= message %></p>
-    <button><a href="/">Home</a></button>
+  <div class="container">
+    <header class="header">
+      <h1>Message Details</h1>
+      <a href="/" class="btn-compose">Back to Inbox</a>
+    </header>
+
+    <div class="message-content">
+      <div class="message-header-info">
+        <h3><strong>From:</strong> <%= user %></h3>
+      </div>
+      
+      <div class="message-body">
+        <p><%= message %></p>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>

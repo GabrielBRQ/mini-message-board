@@ -1,17 +1,35 @@
-<!-- index.ejs -->
 <html>
 
+<head>
+  <title>Inbox</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+
 <body>
-    <h1>All Messages</h1>
-    <% for (let i=0; i < messages.length; i++) { %>
-        <h3>User: <%= messages[i].user %>
-        </h3>
-        <p>
-            <%= messages[i].added %>
-        </p>
-        <button><a href="/messageDetails/<%= i %>">Open message</a></button>
-        <% } %>
-    <button><a href="/new">Send a message</a></button>
+  <div class="container">
+    <header class="header">
+      <h1>All Messages</h1>
+      <a href="/new" class="btn-compose">Send a message</a>
+    </header>
+
+    <div class="message-list">
+      <% for (let i=0; i < messages.length; i++) { %>
+        <a href="/messageDetails/<%= i %>" class="message-item">
+          <div class="message-user">
+            <%= messages[i].user %>
+          </div>
+          
+          <div class="message-snippet">
+            Click to read the message...
+          </div>
+          
+          <div class="message-date">
+            <%= messages[i].added.toLocaleDateString() %>
+          </div>
+        </a>
+      <% } %>
+    </div>
+  </div>
 </body>
 
 </html>
